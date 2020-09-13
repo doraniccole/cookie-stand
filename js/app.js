@@ -1,31 +1,15 @@
-console.log('hello from javascript')
+'use strict';
+//Stores the min / max hourly customers, and the average cookies per customer, in object properties
+//Uses a method of that object to generate a random number of customers per hour.Objects / Math / random
+//Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
+//Store the results for each location in a separate array… perhaps as a property of the object representing that location
+//Display the values of each array as unordered lists in the browser
+//Calculating the sum of these hourly totals; your output for each location should look like this:
 
-var seattleList= document.getElementById('seattleStore')
-seattleList.textContent='listItem,'
-// document.create element to create li elements w/js
-//append child method-- allow to build list in js to place onto ul in html
-//for loop --multiple li elements
 
-document.body.onload = addElement;
-
-function addElement () { 
-  // create a new div element 
-  const newDiv = document.createElement("div"); 
-  
-  // and give it some content 
-  const newContent = document.createTextNode("Hi there and greetings!"); 
-  
-  // add the text node to the newly created div
-  newDiv.appendChild(newContent);  
-
-  // add the newly created element and its content into the DOM 
-  const currentDiv = document.getElementById("div1"); 
-  document.body.insertBefore(newDiv, currentDiv); 
+var Seattle = {
+  minCust:
+  max Cust:
+  aveCookiesPer:
 }
-//developer mozilla credit for createElement examples
-
-    var i;
-for (i = 0; i < numCookies.length; i++) {
-  text += numCookies[i] + "<br>";
-}
-//append to html page
+ 
