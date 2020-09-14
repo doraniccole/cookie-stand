@@ -26,41 +26,209 @@ function getRandomInt(minCust, maxCust) {
    aveCookiesPerCust: 6.3, // ave # cookies sold per cust
    hourlySalesResults: [],
    getHourlySalesResults: function() {
+      
       for (var i=0; i<hours.length; i++) {
          // random number between min and max cust
          var custPerHour = getRandomInt(this.minCust, this.maxCust);
          // find cookies per hour
          var totalCookiesPerHr = Math.floor(custPerHour * this.aveCookiesPerCust);
-         totalCookiesPerHr.push(this.hourlySalesResults);
+         this.hourlySalesResults.push(totalCookiesPerHr);
+         
       } //for loop 
    }, //func
    setInHtml: function() {
          this.getHourlySalesResults();
          var totalCookies = 0;
-         var divId = document.getElementById('seattleStore');
-         // set Ul makes unordered list
-         var setUl = document.createElement('ul');
+         var theList = document.getElementById('theList');
          // city title is creating h1 naming it the location
-         var cityTitle = document.createElement('h1');
+         var cityTitle = document.createElement('h3');
          cityTitle.textContent = this.storeLocation;
-         setUl.appendChild(cityTitle);
+         theList.appendChild(cityTitle);
 
          for(var i=0; i<hours.length; i++) {
             var hourLi = document.createElement('li');
-            hourLi.textContent = hours[i] + ': ' +  this.salesPerHour[i] + 'cookies';
-            cityUl.appendChild(hourLi);
+            hourLi.textContent = hours[i] + ': ' +  this.hourlySalesResults[i] + ' cookies';
+            theList.appendChild(hourLi)
+
          }
-         for(var j=0; j<this.salesPerHour.length; j++){
-            totalCookies += this.salesPerHour[i];
+         var totalCookies = 0
+         for(var j=0; j<this.hourlySalesResults.length; j++) {
+            totalCookies += this.hourlySalesResults[j];
          }
          var totalLi = document.createElement('li');
          totalLi.textContent = 'Total: ' + totalCookies + ' cookies'
-         cityUl.appendChild(totalLi);
-         divId.append(cityUl);
-    }
+         theList.appendChild(totalLi);
+   }
  }  //object
- seattleStore.getHourlySales();
- seattleStore.setInHtml();
+var Tokyo = {
+   storeLocation: 'Tokyo',
+   minCust: 3,
+   maxCust: 24,
+   aveCookiesPerCust: 1.2, // ave # cookies sold per cust
+   hourlySalesResults: [],
+   getHourlySalesResults: function () {
+      
+      for (var i = 0; i < hours.length; i++) {
+         // random number between min and max cust
+         var custPerHour = getRandomInt(this.minCust, this.maxCust);
+         // find cookies per hour
+         var totalCookiesPerHr = Math.floor(custPerHour * this.aveCookiesPerCust);
+         this.hourlySalesResults.push(totalCookiesPerHr);
+
+      } //for loop 
+   }, //func
+   setInHtml: function () {
+      this.getHourlySalesResults();
+      var totalCookies = 0;
+      var theList = document.getElementById('theList');
+      // city title is creating h1 naming it the location
+      var cityTitle = document.createElement('h3');
+      cityTitle.textContent = this.storeLocation;
+      theList.appendChild(cityTitle);
+
+      for (var i = 0; i < hours.length; i++) {
+         var hourLi = document.createElement('li');
+         hourLi.textContent = hours[i] + ': ' + this.hourlySalesResults[i] + ' cookies';
+         theList.appendChild(hourLi)
+
+      }
+      var totalCookies = 0
+      for (var j = 0; j < this.hourlySalesResults.length; j++) {
+         totalCookies += this.hourlySalesResults[j];
+      }
+      var totalLi = document.createElement('li');
+      totalLi.textContent = 'Total: ' + totalCookies + ' cookies'
+      theList.appendChild(totalLi);
+   }
+}  //object
+var Dubai = {
+   storeLocation: 'Dubai',
+   minCust: 11,
+   maxCust: 38,
+   aveCookiesPerCust: 3.7, // ave # cookies sold per cust
+   hourlySalesResults: [],
+   getHourlySalesResults: function () {
+      
+      for (var i = 0; i < hours.length; i++) {
+         // random number between min and max cust
+         var custPerHour = getRandomInt(this.minCust, this.maxCust);
+         // find cookies per hour
+         var totalCookiesPerHr = Math.floor(custPerHour * this.aveCookiesPerCust);
+         this.hourlySalesResults.push(totalCookiesPerHr);
+
+      } //for loop 
+   }, //func
+   setInHtml: function () {
+      this.getHourlySalesResults();
+      var totalCookies = 0;
+      var theList = document.getElementById('theList');
+      // city title is creating h1 naming it the location
+      var cityTitle = document.createElement('h3');
+      cityTitle.textContent = this.storeLocation;
+      theList.appendChild(cityTitle);
+
+      for (var i = 0; i < hours.length; i++) {
+         var hourLi = document.createElement('li');
+         hourLi.textContent = hours[i] + ': ' + this.hourlySalesResults[i] + ' cookies';
+         theList.appendChild(hourLi)
+
+      }
+      var totalCookies = 0
+      for (var j = 0; j < this.hourlySalesResults.length; j++) {
+         totalCookies += this.hourlySalesResults[j];
+      }
+      var totalLi = document.createElement('li');
+      totalLi.textContent = 'Total: ' + totalCookies + ' cookies'
+      theList.appendChild(totalLi);
+   }
+}  //object
+var Lima = {
+   storeLocation: 'Lima',
+   minCust: 2,
+   maxCust: 16,
+   aveCookiesPerCust: 4.6, // ave # cookies sold per cust
+   hourlySalesResults: [],
+   getHourlySalesResults: function () {
+      
+      for (var i = 0; i < hours.length; i++) {
+         // random number between min and max cust
+         var custPerHour = getRandomInt(this.minCust, this.maxCust);
+         // find cookies per hour
+         var totalCookiesPerHr = Math.floor(custPerHour * this.aveCookiesPerCust);
+         this.hourlySalesResults.push(totalCookiesPerHr);
+
+      } //for loop 
+   }, //func
+   setInHtml: function () {
+      this.getHourlySalesResults();
+      var totalCookies = 0;
+      var theList = document.getElementById('theList');
+      // city title is creating h1 naming it the location
+      var cityTitle = document.createElement('h3');
+      cityTitle.textContent = this.storeLocation;
+      theList.appendChild(cityTitle);
+
+      for (var i = 0; i < hours.length; i++) {
+         var hourLi = document.createElement('li');
+         hourLi.textContent = hours[i] + ': ' + this.hourlySalesResults[i] + ' cookies';
+         theList.appendChild(hourLi)
+
+      }
+      var totalCookies = 0
+      for (var j = 0; j < this.hourlySalesResults.length; j++) {
+         totalCookies += this.hourlySalesResults[j];
+      }
+      var totalLi = document.createElement('li');
+      totalLi.textContent = 'Total: ' + totalCookies + ' cookies'
+      theList.appendChild(totalLi);
+   }
+}  //object
+var Paris = {
+   storeLocation: 'Paris',
+   minCust: 20,
+   maxCust: 38,
+   aveCookiesPerCust: 2.3, // ave # cookies sold per cust
+   hourlySalesResults: [],
+   getHourlySalesResults: function () {
+      
+      for (var i = 0; i < hours.length; i++) {
+         // random number between min and max cust
+         var custPerHour = getRandomInt(this.minCust, this.maxCust);
+         // find cookies per hour
+         var totalCookiesPerHr = Math.floor(custPerHour * this.aveCookiesPerCust);
+         this.hourlySalesResults.push(totalCookiesPerHr);
+
+      } //for loop 
+   }, //func
+   setInHtml: function () {
+      this.getHourlySalesResults();
+      var totalCookies = 0;
+      var theList = document.getElementById('theList');
+      // city title is creating h1 naming it the location
+      var cityTitle = document.createElement('h3');
+      cityTitle.textContent = this.storeLocation;
+      theList.appendChild(cityTitle);
+
+      for (var i = 0; i < hours.length; i++) {
+         var hourLi = document.createElement('li');
+         hourLi.textContent = hours[i] + ': ' + this.hourlySalesResults[i] + ' cookies';
+         theList.appendChild(hourLi)
+
+      }
+      var totalCookies = 0
+      for (var j = 0; j < this.hourlySalesResults.length; j++) {
+         totalCookies += this.hourlySalesResults[j];
+      }
+      var totalLi = document.createElement('li');
+      totalLi.textContent = 'Total: ' + totalCookies + ' cookies'
+      theList.appendChild(totalLi);
+   }
+}  //object
+Seattle.setInHtml();
+Tokyo.setInHtml();
+Dubai.setInHtml();
+Paris.setInHtml();
+Lima.setInHtml();
 
   //cityUl is now called setUl change accordingly one way or to something else that makes sense
 //perhaps as a property of the object representing that location
