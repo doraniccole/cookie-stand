@@ -1,9 +1,20 @@
 'use strict';
 
 
-
-//generate a random number of customers per hour
+//generate a random number of customers per hour 
+// this is an array
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+var variable1 = "value"; // one value
+var array1 = [1,2,3,4,5,6,7,8, true, "string"]; //multiple values - enclosed in [ ]
+var object1 = {   // set of variables, arrays, functions, etc, in key/value form
+   key: "value3",  // variable
+   key2: "value2", // variable
+   array: [1,2,3], // array
+   sayHello: function() {  // function
+      alert("hello")
+   } // invoke function: object1.sayhello();
+};
 
 function getRandomInt(minCust, maxCust) {
    minCust = Math.ceil(minCust);
@@ -11,11 +22,11 @@ function getRandomInt(minCust, maxCust) {
    return Math.floor(Math.random() * (maxCust - minCust) + minCust);
 }
  function Store(name,minCust,maxCust,aveCookiesPerCust) {
-   this.storeLocation= name;
-   this.minCust= minCust;
-   this.maxCust= maxCust;
+   this.storeLocation= name; // name of store
+   this.minCust= minCust; // minimum customers
+   this.maxCust= maxCust; // maximum customers
    this.aveCookiesPerCust= aveCookiesPerCust; // ave # cookies sold per cust
-   this.hourlySalesResults= [];
+   this.hourlySalesResults= []; // hourly sales count (random number * aveCookiesPerCust)
    this.getHourlySalesResults= function () {
       
       for (var i=0; i<hours.length; i++) {
@@ -64,6 +75,18 @@ tokyo.setInHtml();
 dubai.setInHtml();
 paris.setInHtml();
 lima.setInHtml();
+
+var form = document.getElementById('myForm')
+form.addEventListener('click',function(event) {
+   event.preventDefault()
+   var name = form.cookieName.value
+   form.cookieName.value = ""
+   form.cookieLocation.value = ""
+   console.log(cookieName + " " +  cookieLocation)
+   var h1 = document.createElement('h1')
+   
+
+})
 
 
   //cityUl is now called setUl change accordingly one way or to something else that makes sense
