@@ -13,7 +13,7 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
  //  array: [1,2,3], // array
  //  sayHello: function() {  // function
  //     alert("hello")
- //  } // invoke function: object1.sayhello();
+ //  } // invoke function: object1.sayHello();
 //};
 
 function getRandomInt(minCus, maxCus) {
@@ -21,7 +21,7 @@ function getRandomInt(minCus, maxCus) {
    maxCus = Math.floor(maxCus);
    return Math.floor(Math.random() * (maxCus - minCus) + minCus);
 }
- function Store(name,minCus,maxCus,aveCookiesPerCus) {
+ function Store(name: any, minCus: any, maxCus: any, aveCookiesPerCus: any): void {
    this.storeLocation= name; // name of store
    this.minCus= minCus; // minimum customers
    this.maxCus= maxCus; // maximum customers
@@ -42,13 +42,16 @@ function getRandomInt(minCus, maxCus) {
          this.getHourlySalesResults();
          var totalCookies = 0;
          var cookieTable = document.getElementById('cookieTable');
-         // city title is creating h1 naming it the location
+         // city title is creating h3 naming it the location
          var cityTitle = document.createElement('h3');
          cityTitle.textContent = this.storeLocation;
          cookieTable.appendChild(cityTitle);
-         for(
-
-         )
+      
+            var totalCookies = 0
+        for (var j = 0; j < this.hourlySalesResults.length; j++) {
+               totalCookies += this.hourlySalesResults[j];
+            }
+         
          for(var i=0; i<hours.length; i++) {
             var hourTd = document.createElement('td');
             hourTd.textContent = this.hourlySalesResults[i];
@@ -67,10 +70,16 @@ function getRandomInt(minCus, maxCus) {
  // Alex Pena guidance 
 
 var seattle = new Store('Seattle', 23, 65, 6.3);
+seattle.generateDailyCookie();
 var tokyo = new Store('Tokyo', 3, 24, 1.2);
+tokyo.generateDailyCookie();
 var dubai = new Store('Dubai', 11, 38, 3.7);
+dubai.generateDailyCookie();
 var paris = new Store('Paris', 20, 38, 2.3);
+paris.generateDailyCookie();
 var lima = new Store('Lima', 2, 16, 4.6);
+lima.generateDailyCookie();
+
 
 seattle.setInHtml();
 tokyo.setInHtml();
@@ -79,14 +88,14 @@ paris.setInHtml();
 lima.setInHtml();
 
 var form = document.getElementById('myForm')
-form.addEventListener('click',function(event) {
-   event.preventDefault()
-   var name = form.cookieName.value
-   form.cookieName.value = ""
-   form.cookieLocation.value = ""
-   console.log(cookieName + " " +  cookieLocation)
-   var h1 = document.createElement('h1')
-   
+   form.addEventListener('click', function(event) {
+      event.preventDefault();
+      var name = form.cookieName.value;
+      form.cookieName.value = "";
+      var amount = form.cookieLocation.value;
+      form.cookieLocation.value = "";
+   console.log(cookieName + " " +  cookieLocation);
+   var h1 = document.createElement('h1');
 
 })
 
