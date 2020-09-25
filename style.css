@@ -1,3 +1,22 @@
+a {
+    color: rgb(73, 18, 18);
+}
 #bigFish {
 
+    shape-image-threshold: ;
+background-color: #b99e74
+}
+h1 {
+    color: rgb(73, 18, 18)
+    font-weight: bold;
+}
+
+#anotherfish {
+}
+body {
+    background-color: #b99e74; height: auto; font-family: 'Architects Daughter';font-size: 20px; margin: 35px; padding: 10%;
+
+}
+div {
+    color: rgb(73, 18, 18);
 }
