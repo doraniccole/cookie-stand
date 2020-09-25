@@ -5,35 +5,35 @@
 // this is an array
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-var variable1 = "value"; // one value
-var array1 = [1,2,3,4,5,6,7,8, true, "string"]; //multiple values - enclosed in [ ]
-var object1 = {   // set of variables, arrays, functions, etc, in key/value form
-   key: "value3",  // variable
-   key2: "value2", // variable
-   array: [1,2,3], // array
-   sayHello: function() {  // function
-      alert("hello")
-   } // invoke function: object1.sayhello();
-};
+//var variable1 = "value"; // one value
+//var array1 = [1,2,3,4,5,6,7,8, true, "string"]; //multiple values - enclosed in [ ]
+//var object1 = {   // set of variables, arrays, functions, etc, in key/value form
+ //  key: "value3",  // variable
+ //  key2: "value2", // variable
+ //  array: [1,2,3], // array
+ //  sayHello: function() {  // function
+ //     alert("hello")
+ //  } // invoke function: object1.sayhello();
+//};
 
-function getRandomInt(minCust, maxCust) {
-   minCust = Math.ceil(minCust);
-   maxCust = Math.floor(maxCust);
-   return Math.floor(Math.random() * (maxCust - minCust) + minCust);
+function getRandomInt(minCus, maxCus) {
+   minCus = Math.ceil(minCus);
+   maxCus = Math.floor(maxCus);
+   return Math.floor(Math.random() * (maxCus - minCus) + minCus);
 }
- function Store(name,minCust,maxCust,aveCookiesPerCust) {
+ function Store(name,minCus,maxCus,aveCookiesPerCus) {
    this.storeLocation= name; // name of store
-   this.minCust= minCust; // minimum customers
-   this.maxCust= maxCust; // maximum customers
-   this.aveCookiesPerCust= aveCookiesPerCust; // ave # cookies sold per cust
-   this.hourlySalesResults= []; // hourly sales count (random number * aveCookiesPerCust)
+   this.minCus= minCus; // minimum customers
+   this.maxCus= maxCus; // maximum customers
+   this.aveCookiesPerCus= aveCookiesPerCus; // ave # cookies sold per cus
+   this.hourlySalesResults= []; // hourly sales count (random number * aveCookiesPerCus)
    this.getHourlySalesResults= function () {
       
       for (var i=0; i<hours.length; i++) {
-         // random number between min and max cust
-         var custPerHour = getRandomInt(this.minCust, this.maxCust);
+         // random number between min and max cus
+         var cusPerHour = getRandomInt(this.minCus, this.maxCus);
          // find cookies per hour
-         var totalCookiesPerHr = Math.floor(custPerHour * this.aveCookiesPerCust);
+         var totalCookiesPerHr = Math.floor(cusPerHour * this.aveCookiesPerCus);
          this.hourlySalesResults.push(totalCookiesPerHr);
       } //for loop 
    }; //func
@@ -46,23 +46,25 @@ function getRandomInt(minCust, maxCust) {
          var cityTitle = document.createElement('h3');
          cityTitle.textContent = this.storeLocation;
          cookieTable.appendChild(cityTitle);
+         for(
 
+         )
          for(var i=0; i<hours.length; i++) {
             var hourTd = document.createElement('td');
-            hourTd.textContent = hours[i] + ': ' +  this.hourlySalesResults[i] + ' cookies';
+            hourTd.textContent = this.hourlySalesResults[i];
             cookieTable.appendChild(hourTd)
-
+            var totalCookies = 0
+            for (var j = 0; j < this.hourlySalesResults.length; j++) {
+               totalCookies += this.hourlySalesResults[j];
+            }
          }
-         var totalCookies = 0
-         for(var j=0; j<this.hourlySalesResults.length; j++) {
-            totalCookies += this.hourlySalesResults[j];
-         }
-         var totalTr = document.createElement('tr');
-         totalTr.textContent = 'Total: ' + totalCookies + ' cookies'
-         cookieTable.appendChild(totalTr);
+        
+         var totalTd = document.createElement('td');
+         totalTd.textContent = 'Total: ' + totalCookies + ' cookies'
+         cookieTable.appendChild(totalTd);
    }
  };  //constructor
- 
+ // Alex Pena guidance 
 
 var seattle = new Store('Seattle', 23, 65, 6.3);
 var tokyo = new Store('Tokyo', 3, 24, 1.2);
@@ -98,3 +100,5 @@ form.addEventListener('click',function(event) {
 
 // credit developer mozilla
 // with lots of help from Alex Pena
+// lecture model 
+// tutor Vinicio
