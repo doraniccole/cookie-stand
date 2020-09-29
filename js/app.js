@@ -21,53 +21,61 @@ function getRandomInt(minCus, maxCus) {
    maxCus = Math.floor(maxCus);
    return Math.floor(Math.random() * (maxCus - minCus) + minCus);
 }
- function Store(name: any, minCus: any, maxCus: any, aveCookiesPerCus: any): void {
+ function Store(name, minCus, maxCus, aveCookiesPerCus) {
    this.storeLocation= name; // name of store
    this.minCus= minCus; // minimum customers
    this.maxCus= maxCus; // maximum customers
    this.aveCookiesPerCus= aveCookiesPerCus; // ave # cookies sold per cus
    this.hourlySalesResults= []; // hourly sales count (random number * aveCookiesPerCus)
-   this.getHourlySalesResults= function () {
+   // this.getHourlySalesResults= function () {
       
-      for (var i=0; i<hours.length; i++) {
-         // random number between min and max cus
+   //    for (var i=0; i<hours.length; i++) {
+   //       // random number between min and max cus
+   //       var cusPerHour = getRandomInt(this.minCus, this.maxCus);
+   //       // find cookies per hour
+   //       var totalCookiesPerHr = Math.floor(cusPerHour * this.aveCookiesPerCus);
+   //       this.hourlySalesResults.push(totalCookiesPerHr);
+   //    } //for loop 
+   // }; //func
+//document.getElementById('cookieTable')
+   // this.setInHtml= function() {
+   //       this.getHourlySalesResults();
+   //       var totalCookies = 0;
+   //       var cookieTable = document.getElementById('cookieTable');
+   //       // city title is creating h3 naming it the location
+   //       var cityTitle = document.createElement('h3');
+   //       cityTitle.textContent = this.storeLocation;
+   //       cookieTable.appendChild(cityTitle);
+      
+      //       var totalCookies = 0
+      //   for (var j = 0; j < this.hourlySalesResults.length; j++) {
+      //          totalCookies += this.hourlySalesResults[j];
+      //       }
+         
+   //       for(var i=0; i<hours.length; i++) {
+   //          var hourTd = document.createElement('td');
+   //          hourTd.textContent = this.hourlySalesResults[i];
+   //          cookieTable.appendChild(hourTd)
+   //          var totalCookies = 0
+   //          for (var j = 0; j < this.hourlySalesResults.length; j++) {
+   //             totalCookies += this.hourlySalesResults[j];
+   //          }
+   //       }
+        
+   //       var totalTd = document.createElement('td');
+   //       totalTd.textContent = 'Total: ' + totalCookies + ' cookies'
+   //       cookieTable.appendChild(totalTd);
+   // }
+    for (var i = 0; i < hours.length; i++) {
+   //       // random number between min and max cus
          var cusPerHour = getRandomInt(this.minCus, this.maxCus);
-         // find cookies per hour
+   //       // find cookies per hour
          var totalCookiesPerHr = Math.floor(cusPerHour * this.aveCookiesPerCus);
          this.hourlySalesResults.push(totalCookiesPerHr);
-      } //for loop 
-   }; //func
-//document.getElementById('cookieTable')
-   this.setInHtml= function() {
-         this.getHourlySalesResults();
-         var totalCookies = 0;
-         var cookieTable = document.getElementById('cookieTable');
-         // city title is creating h3 naming it the location
-         var cityTitle = document.createElement('h3');
-         cityTitle.textContent = this.storeLocation;
-         cookieTable.appendChild(cityTitle);
-      
-            var totalCookies = 0
-        for (var j = 0; j < this.hourlySalesResults.length; j++) {
-               totalCookies += this.hourlySalesResults[j];
-            }
          
-         for(var i=0; i<hours.length; i++) {
-            var hourTd = document.createElement('td');
-            hourTd.textContent = this.hourlySalesResults[i];
-            cookieTable.appendChild(hourTd)
-            var totalCookies = 0
-            for (var j = 0; j < this.hourlySalesResults.length; j++) {
-               totalCookies += this.hourlySalesResults[j];
-            }
-         }
-        
-         var totalTd = document.createElement('td');
-         totalTd.textContent = 'Total: ' + totalCookies + ' cookies'
-         cookieTable.appendChild(totalTd);
-   }
  };  //constructor
  // Alex Pena guidance 
+ 
 
 var seattle = new Store('Seattle', 23, 65, 6.3);
 seattle.generateDailyCookie();

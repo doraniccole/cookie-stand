@@ -19,4 +19,5 @@ body {
 }
 div {
     color: rgb(73, 18, 18);
+    border: darkcyan;
 }
