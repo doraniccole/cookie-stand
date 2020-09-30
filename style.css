@@ -2,22 +2,29 @@ a {
     color: rgb(73, 18, 18);
 }
 #bigFish {
-
-    shape-image-threshold: ;
-background-color: #b99e74
+    background-color: #b99e74;
+    float: left;
 }
+
 h1 {
-    color: rgb(73, 18, 18)
+    color: rgb(73, 18, 18);
     font-weight: bold;
 }
-
 #anotherfish {
+    float: right;
 }
 body {
-    background-color: #b99e74; height: auto; font-family: 'Architects Daughter';font-size: 20px; margin: 35px; padding: 10%;
-
+    background-color: #b99e74; 
+    height: auto; 
+    font-family: 'Architects Daughter';
+    font-size: 20px; margin: 35px; padding: 10%;
+    float: left;
 }
 div {
     color: rgb(73, 18, 18);
     border: darkcyan;
+    
+}
+#cookieCutter {
+    float: right;
 }
