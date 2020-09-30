@@ -16,7 +16,7 @@ function getRandomInt(minCus, maxCus) {
    this.minCus= minCus; // minimum customers
    this.maxCus= maxCus; // maximum customers
    this.aveCookiesPerCus= aveCookiesPerCus; // ave # cookies sold per cus
-   this.hourlySalesResultsResults= []; // hourly sales count (random number * aveCookiesPerCus)
+   this.hourlySalesResults= []; // hourly sales count (random number * aveCookiesPerCus)
    this.totalHolder=0 //hold the total number of cookies per day
 
     for (var i = 0; i < hours.length; i++) {
@@ -24,10 +24,10 @@ function getRandomInt(minCus, maxCus) {
          var cusPerHour = getRandomInt(this.minCus, this.maxCus);
    //       // find cookies per hour
          var totalCookiesPerHr = Math.floor(cusPerHour * this.aveCookiesPerCus);
-         this.hourlySalesResultsResults.push(totalCookiesPerHr);
+         this.hourlySalesResults.push(totalCookiesPerHr);
       }
-   for (var i=0; i < this.hourlySalesResultsResults.length; i++) {
-      this.totalHolder += this.hourlySalesResultsResults[i];
+   for (var j=0; j < this.hourlySalesResults.length; j++) {
+      this.totalHolder += this.hourlySalesResults[j];
    
    }
 
@@ -48,18 +48,7 @@ var paris = new Store('Paris', 20, 38, 2.3);
 var lima = new Store('Lima', 2, 16, 4.6);
 //lima.generateDailyCookie();
 
-var form = document.getElementById('myForm');
-
-form.addEventListener('click', function(event) {
-   event.preventDefault();
-   var name = form.cookieName.value;
-   form.cookieName.value = "";
-   var amount = form.cookieLocation.value;
-   form.cookieLocation.value = "";
-console.log(cookieName + " " +  cookieLocation);
-var h1 = document.createElement('h1');
-
-})
+storeLocations.push(seattle, tokyo, dubai, paris, lima);
 
 var tableBody = document.getElementById('salesTable');
 
@@ -79,13 +68,14 @@ function renderHeader() {
    headerTotal.textContent = 'Store Total';
    headerRow.appendChild(headerTotal);
 }
+
 Store.prototype.body = function () {
    var bodyRow = document.createElement('tr');
    tableBody.appendChild(bodyRow);
 
    //Create Store name for each row
    var bodyStore = document.createElement('td');
-   bodyStore.textContent = this.storeName;
+   bodyStore.textContent = this.storeLocation;
    bodyRow.appendChild(bodyStore);
 
    // Hours by loop through hours array and rendering hourlySalesResults
@@ -95,28 +85,28 @@ Store.prototype.body = function () {
       bodyRow.appendChild(bodyHours);
    }
 
-   //Grabbing Daily Total and rendering it at the end of the row.
+   //Daily Total and rendering it at the end of the row
    var bodyTotal = document.createElement('td');
-   bodyTotal.textContent = this.dailyTotals;
+   bodyTotal.textContent = this.totalHolder;
    bodyRow.appendChild(bodyTotal);
 }
 
 function renderFooter() {
    var footerRow = document.createElement('tr');
    var footerStore = document.createElement('th');
-   footerStore.textContent = 'Hourly Totals';
+   footerStore.textContent = 'Totals Each Hour';
    footerRow.appendChild(footerStore);
 
    var grandTotal = 0;
-   var totalhourlySalesResults = 0;
+   var totalHourlySalesResults = 0;
    for (var row = 0; row < hours.length; row++) {
-      totalhourlySalesResults = 0;
+      totalHourlySalesResults = 0;
       for (var column = 0; column < storeLocations.length; column++) {
-         totalhourlySalesResults += storeLocations[column].hourlySalesResults[row];
+         totalHourlySalesResults += storeLocations[column].hourlySalesResults[row];
          grandTotal += storeLocations[column].hourlySalesResults[row];
       }
       var totalHours = document.createElement('th');
-      totalHours.textContent = totalhourlySalesResults;
+      totalHours.textContent = totalHourlySalesResults;
       footerRow.appendChild(totalHours);
    }
    var grandTotalSales = document.createElement('th');
@@ -141,6 +131,18 @@ render();
 //for each location should look like this:
 //    a table
 
+var form = document.getElementById('myForm');
+
+form.addEventListener('click', function (event) {
+   event.preventDefault();
+   var name = form.cookieName.value;
+   form.cookieName.value = "";
+   var amount = form.cookieLocation.value;
+   form.cookieLocation.value = "";
+   console.log(cookieName + " " + cookieLocation);
+   var h1 = document.createElement('h1');
+
+})
 
 // credit developer mozilla
 // with lots of help from Alex Pena
