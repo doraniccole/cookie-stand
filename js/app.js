@@ -103,7 +103,7 @@ var form = document.getElementById('myForm')
       var amount = form.cookieLocation.value;
       form.cookieLocation.value = "";
    console.log(cookieName + " " +  cookieLocation);
-   var h1 = document.createElement('h1');
+   var body = document.createElement('body');
 
 })
 
