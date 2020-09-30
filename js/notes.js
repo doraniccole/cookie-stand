@@ -114,7 +114,45 @@ lima.setInHtml();
 
 // })
 
+   // this.getHourlySalesResults= function () {
 
+   //    for (var i=0; i<hours.length; i++) {
+   //       // random number between min and max cus
+   //       var cusPerHour = getRandomInt(this.minCus, this.maxCus);
+   //       // find cookies per hour
+   //       var totalCookiesPerHr = Math.floor(cusPerHour * this.aveCookiesPerCus);
+   //       this.hourlySalesResults.push(totalCookiesPerHr);
+   //    } //for loop 
+   // }; //func
+//document.getElementById('cookieTable')
+   // this.setInHtml= function() {
+   //       this.getHourlySalesResults();
+   //       var totalCookies = 0;
+   //       var cookieTable = document.getElementById('cookieTable');
+   //       // city title is creating h3 naming it the location
+   //       var cityTitle = document.createElement('h3');
+   //       cityTitle.textContent = this.storeLocation;
+   //       cookieTable.appendChild(cityTitle);
+
+      //       var totalCookies = 0
+      //   for (var j = 0; j < this.hourlySalesResults.length; j++) {
+      //          totalCookies += this.hourlySalesResults[j];
+      //       }
+
+   //       for(var i=0; i<hours.length; i++) {
+   //          var hourTd = document.createElement('td');
+   //          hourTd.textContent = this.hourlySalesResults[i];
+   //          cookieTable.appendChild(hourTd)
+   //          var totalCookies = 0
+   //          for (var j = 0; j < this.hourlySalesResults.length; j++) {
+   //             totalCookies += this.hourlySalesResults[j];
+   //          }
+   //       }
+
+   //       var totalTd = document.createElement('td');
+   //       totalTd.textContent = 'Total: ' + totalCookies + ' cookies'
+   //       cookieTable.appendChild(totalTd);
+   // }
   //cityUl is now called setUl change accordingly one way or to something else that makes sense
 //perhaps as a property of the object representing that location
 //Display the values of each array as unordered lists in the browser

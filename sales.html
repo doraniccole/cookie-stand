@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="stylesales.css">
 </head>
 <body>
 
-    <ul id="theList"></ul>
-    <table id="cookieTable"></table>
-
+    <!--<ul id="theList"></ul>-->
+    <table>
+        <tbody id="salesTable"></tbody>
+    </table>
+    <form id="myForm" action="calculator">
+        <fieldset>
+            <input type="number" amount="quantity" />
+            <button>submit</button>
+            <input type="number" amount="quantity" />
+            <button>submit</button>
+        </fieldset>
+    </form>
+<a href="index.html">Back to Index</a>
 <script src='js/app.js'></script>
 </body>
 </html>
+<!-- Building a very simple calculator
+- Display a number ( starts at 0 ).
+- 1 Text input for a number, 2 buttons
+- Input should take in a number given by the user.
+- 1 Button for adding, the value of the input to some number.
+- 1 Button for subtracting the value. -->
