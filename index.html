@@ -21,53 +21,58 @@
     <img id="anotherFish" src="/img/salmon.png" alt="another fish" width="375px"/>
 
 <div>
-    <p>Sweet, Scaly, and Salty</p>
+    <h3><p>Sweet, Scaly, and Salty</p></h3>
     <img id="frostedCookie" src="/img/frosted-cookie.jpg" alt="frosted cookie"/>
 </div>
+<h3>
     <p>Fine Product Line</p>
+    </h3>
     <img id="tShirt" src="/img/shirt.jpg" alt="t shirt"/>
     <img id="cookieCutter" src="/img/cutter.jpeg" alt="cookie cutter"/>
+
 </div>
 <div>
-    <p>Locations all over the world</p>
+    <h3><p>Locations all over the world</p></h2>
     <img id="familyImg" src="/img/family.jpg" alt="family"/>
-    <p>6am-7pm</p>
+    <h3><p>6am-7pm</p>
     <p>Salmon Cookie Fun, 333 East Yum Street, Tokyo, Japan</p>
     <p>Salmon Cookie Fun, 333 South Delicious Street, Lima, Peru</p> 
     <p>Salmon Cookie Fun, 333 Pike Edible Street, Seattle, USA</p>
     <p>Salmon Cookie Fun, 333 North Scrumptious Street, Dubai, UAE</p>
     <p>Salmon Cookie Fun, 333 West Bon Bon Street, Paris, France</p>
+    </h3>
     
 
     
     <img id="fishSchool" src="/img/fish.jpg" alt="fishSchool"/>
-    <p>Headquarters Contact: 206-555-1234</p>
+    <h4><p>Headquarters Contact: 206-555-1234</p></h4>
 </div>
         <footer id="cookieForm">
+            <form name="cookieForm">
             <fieldset>
-        
-            </fieldset>
-        
-        </footer>
+        <legend>Add New City:</legend>
+        <label for="storeName">Store Name</label> <br>
+        <input type="text" width="25px" name="storeName"/> <br>
     
+        <label for="city">City</label> <br>
+        <input type="text" width="25px" name="city"/> <br>
 
-<form id="myForm" action="calculator">
-    <fieldset>
-    <input type="text" name="location"/>
-    <button>submit</button>
-    <input type="text" amount="quantity"/>
-    <button>submit</button>
-    </fieldset>
-</form>
+        <label for="maxCus">Maximum Customers</label ><br>
+        <input type="number" width="25px" number="maxCus"/> <br>
+
+        <label for="minCus">Minimum Customers</label> <br>
+        <input type= "number" width="25px" number="minCus"/> <br>
+
+        <label for="aveCookiesPerCus">Average Cookies Per Customer</label> <br>
+        <button name="push me">Push Me</button>
+            </fieldset>
+        </form>
+
+        </footer>
+
     <h1></h1>
     <script src="cookie.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
 
-<!-- Building a very simple calculator
-- Display a number ( starts at 0 ).
-- 1 Text input for a number, 2 buttons
-- Input should take in a number given by the user.
-- 1 Button for adding, the value of the input to some number.
-- 1 Button for subtracting the value. -->
